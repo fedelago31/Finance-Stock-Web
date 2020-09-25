@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Amount of Shares</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Date of Transaction</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--aca va un codido-->
+            {% for item in data_list %}
+             <tr class="{{ item['type'] }}">
+                    <td>{{ item["symbol"] }}</td>
+                    <td>{{ item["amount"] }}</td>
+                    <td>{{ item["price"] }}</td>
+                    <td>{{ item["type"] }}</td>
+                    <td>{{ item["date"] }}</td>
+
+                </tr>
+            {% endfor %}
+
+
+        </tbody>
+
+    </table>
+{% endblock %}
